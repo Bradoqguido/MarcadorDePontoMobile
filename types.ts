@@ -1,9 +1,28 @@
-export type Ponto = {
-    id: number;
-    tipo: string;
-    datahora: Date;
+export type tPageParams = {};
+
+export class Ponto {
+    id: number = 0;
+    tipo: string = '';
+    dataHora: Date = new Date();
+
+    constructor(id: number, tipo: string, dataHora: Date) {
+        this.id = id;
+        this.tipo = tipo;
+        this.dataHora = dataHora;
+    }
 };
 
-export interface iModalProps {
-    lstPonto: Ponto[];
-}
+export type tPonto = {
+    id: number;
+    tipo: string;
+    dataHora: Date;
+};
+
+export interface iPontoModalProps {
+    lstPonto: tPonto[];
+};
+
+export type Config = {
+    horarioEntradaPadrao: Date;
+    horarioSaidaPadrao: Date;
+};
