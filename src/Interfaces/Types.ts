@@ -26,3 +26,7 @@ export type Config = {
     horarioEntradaPadrao: Date;
     horarioSaidaPadrao: Date;
 };
+
+export type Link = {
+    strLink: string;
+}

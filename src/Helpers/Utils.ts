@@ -1,5 +1,4 @@
-import { tPonto, Ponto } from './Types';
-
+import { Ponto } from '../Interfaces/Types';
 
 export class Utils {
     
