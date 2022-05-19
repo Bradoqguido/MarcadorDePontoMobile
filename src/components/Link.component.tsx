@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { Styles } from '../Styles';
-import { Link } from '../Interfaces/Types';
+import { iLink } from '../Interfaces/Types';
 
-export default function Link({ strLink }: Link) {
+export default function LinkComponent({ strLink }: iLink) {
 
     return (
         <Text
@@ -12,5 +12,5 @@ export default function Link({ strLink }: Link) {
             { strLink }
         </Text>
     );
-    
+
 }
