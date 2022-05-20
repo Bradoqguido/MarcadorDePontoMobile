@@ -2,13 +2,13 @@ import React from 'react';
 import { iButton } from '../Interfaces/Interfaces';
 import styled from 'styled-components/native';
 
-export default function ButtonComponent({ onPress, bgColor, text}: iButton) {
+export default function ButtonComponent({ onPress, bgColor, title}: iButton) {
     const ButtonContainer = styled.TouchableOpacity`
-        margin-vertical: 40px;
+        margin: 8px;
         width: 120px;
         height: 40px;
         padding: 8px;
-        border-radius: 10px;
+        border-radius: 5px;
         background-color: ${bgColor}
     `;
 
@@ -19,7 +19,7 @@ export default function ButtonComponent({ onPress, bgColor, text}: iButton) {
 
     return (
         <ButtonContainer onPress={onPress} bgColor={bgColor}>
-            <ButtonText>{text}</ButtonText>
+            <ButtonText>{title}</ButtonText>
         </ButtonContainer>
     );
 

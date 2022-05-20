@@ -1,8 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const Styles = StyleSheet.create({
-    container: {
+    flexContainer: {
       flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    container: {
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
@@ -20,15 +25,24 @@ export const Styles = StyleSheet.create({
     header: {
       padding: 20
     },
+    singleButtonCard: {
+      borderRadius: 0,
+      marginRight: 0,
+      marginBottom: 0,
+      marginLeft: 0
+    },
+    card: {
+      borderWidth: 0,
+    },
     title: {
       fontWeight: 'bold',
-      fontSize: 1.5,
+      fontSize: 15,
       marginVertical: 1,
       textAlign: 'center'
     },
     text: {
       lineHeight: 1.5,
-      fontSize: 1.125,
+      fontSize: 12,
       marginVertical: 1,
       textAlign: 'center'
     },
@@ -37,6 +51,9 @@ export const Styles = StyleSheet.create({
     },
     code: {
       fontFamily: 'monospace, monospace'
-    }
+    },
+    scrollView: {
+      margin: 8,
+    },
   });
   

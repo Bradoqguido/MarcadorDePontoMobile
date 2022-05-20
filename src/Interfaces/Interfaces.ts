@@ -11,5 +11,12 @@ export interface iLink {
 export interface iButton {
     onPress: any;
     bgColor: string; 
-    text: string;
+    title: string;
 }
+
+export interface iConfig {
+    dtaHorarioEntradaPadrao: Date;
+    dtaHorarioSaidaPadrao: Date;
+    dtaHorarioSaidaAlmoco: Date;
+    dtaHorarioVoltaAlmoco: Date;
+  };
