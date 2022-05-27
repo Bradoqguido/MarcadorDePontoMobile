@@ -67,7 +67,6 @@ export default function RegistroDePonto ({ navigation }: any) {
       <View>
         <ButtonComponent
           onPress={RegistrarPonto}
-          bgColor={'lightblue'}
           title="Registrar ponto"
         />
       </View>
@@ -75,7 +74,6 @@ export default function RegistroDePonto ({ navigation }: any) {
       <View>
         <ButtonComponent
           onPress={ () => navigation.navigate('Configuracao')}
-          bgColor={'lightblue'}
           title="Configurações"
         />
       </View>

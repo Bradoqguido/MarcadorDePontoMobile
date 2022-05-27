@@ -177,7 +177,6 @@ export default function Configuracao() {
 
         <ButtonComponent
               onPress={SaveConfig}
-              bgColor={"lightblue"}
               title="Salvar"
             />
       </Card>
