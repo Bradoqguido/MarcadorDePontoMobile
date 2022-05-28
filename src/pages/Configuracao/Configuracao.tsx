@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, Text, View } from "react-native";
-import { Button, Card } from "react-native-elements";
+import { Button, Card } from "react-native-paper";
 import React, { useEffect, useState } from "react";
 import { Styles } from "../../Styles";
 import { NavigationContainer } from "@react-navigation/native";
@@ -16,9 +16,7 @@ export default function Configuracao() {
   const [mode, setMode] = useState("time");
   const [show, setShow] = useState(false);
 
-  const [dtaHorarioEntradaPadrao, setHorarioEntradaPadrao] = useState(
-    new Date()
-  );
+  const [dtaHorarioEntradaPadrao, setHorarioEntradaPadrao] = useState(new Date());
   const [dtaHorarioSaidaPadrao, setHorarioSaidaPadrao] = useState(new Date());
   const [dtaHorarioSaidaAlmoco, setHorarioSaidaAlmoco] = useState(new Date());
   const [dtaHorarioVoltaAlmoco, setHorarioVoltaAlmoco] = useState(new Date());
@@ -48,7 +46,7 @@ export default function Configuracao() {
         />
       </View>
 
-      <Card>
+      <Card containerStyle={Styles.containerCard}>
         <Card.Title style={Styles.title}>Configurações Marcar Ponto</Card.Title>
 
         <Card>
@@ -65,9 +63,9 @@ export default function Configuracao() {
             )}
             <Text>
               Hora de entrada:{" "}
-              {isNullOrUndefined(date)
+              {isNullOrUndefined(dtaHorarioEntradaPadrao)
                 ? ""
-                : `${date.getHours()}:${date.getMinutes()}:00`}
+                : `${dtaHorarioEntradaPadrao.getHours()}:${dtaHorarioEntradaPadrao.getMinutes()}:00`}
             </Text>
           </View>
 
@@ -95,9 +93,9 @@ export default function Configuracao() {
             )}
             <Text>
               Hora de saida:{" "}
-              {isNullOrUndefined(date)
+              {isNullOrUndefined(dtaHorarioSaidaPadrao)
                 ? ""
-                : `${date.getHours()}:${date.getMinutes()}:00`}
+                : `${dtaHorarioSaidaPadrao.getHours()}:${dtaHorarioSaidaPadrao.getMinutes()}:00`}
             </Text>
           </View>
           <Button
@@ -111,7 +109,9 @@ export default function Configuracao() {
         </Card>
 
         <Card>
-          <Card.Title style={Styles.title}>Definir hora de saida para o almoço:</Card.Title>
+          <Card.Title style={Styles.title}>
+            Definir hora de saida para o almoço:
+          </Card.Title>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -124,9 +124,9 @@ export default function Configuracao() {
             )}
             <Text>
               Hora de saida para o almoço:{" "}
-              {isNullOrUndefined(date)
+              {isNullOrUndefined(dtaHorarioSaidaAlmoco)
                 ? ""
-                : `${date.getHours()}:${date.getMinutes()}:00`}
+                : `${dtaHorarioSaidaAlmoco.getHours()}:${dtaHorarioSaidaAlmoco.getMinutes()}:00`}
             </Text>
           </View>
 
@@ -141,7 +141,9 @@ export default function Configuracao() {
         </Card>
 
         <Card>
-          <Card.Title style={Styles.title}>Definir hora de volta do almoço:</Card.Title>
+          <Card.Title style={Styles.title}>
+            Definir hora de volta do almoço:
+          </Card.Title>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -155,23 +157,32 @@ export default function Configuracao() {
 
             <Text>
               Hora de volta do almoço:{" "}
-              {isNullOrUndefined(date)
+              {isNullOrUndefined(dtaHorarioVoltaAlmoco)
                 ? ""
-                : `${date.getHours()}:${date.getMinutes()}:00`}
+                : `${dtaHorarioVoltaAlmoco.getHours()}:${dtaHorarioVoltaAlmoco.getMinutes()}:00`}
             </Text>
           </View>
           <Button
-            onPress={() => showMode("time")}
+            onPress={() => {
+              showMode("time")
+              setHorarioVoltaAlmoco(date);
+            }}
             style={Styles.singleButtonCard}
             title="Definir"
           />
         </Card>
 
-        {/* <ButtonComponent
-              onPress={setConfig({ date, date, date, date })}
-              bgColor={"lightblue"}
-              title="Salvar"
-            /> */}
+        <View style={Styles.container}>
+        <Button
+          theme={theme}
+          onPress={() => setConfig({
+            dtaHorarioEntradaPadrao,
+            dtaHorarioSaidaPadrao,
+            dtaHorarioSaidaAlmoco,
+            dtaHorarioVoltaAlmoco,
+          })}
+        />
+        </View>
       </Card>
     </View>
   );
