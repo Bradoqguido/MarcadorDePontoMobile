@@ -1,23 +1,30 @@
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
 export const Styles = StyleSheet.create({
-    flexContainer: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     container: {
-      backgroundColor: '#fff',
+      paddingTop: StatusBar.currentHeight,
+      backgroundColor: '#000',
       alignItems: 'center',
       justifyContent: 'center',
     },
-    button: {
-        margin: 8
+    buttonContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 8,
     },
     app: {
       marginHorizontal: 'auto',
       maxWidth: 500
+    },
+    listItem: {
+      display: "flex",
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    scrollView: {
+      margin: 8,
     },
     logo: {
       height: 80
@@ -25,34 +32,76 @@ export const Styles = StyleSheet.create({
     header: {
       padding: 20
     },
-    singleButtonCard: {
-      borderRadius: 0,
-      marginRight: 0,
-      marginBottom: 0,
-      marginLeft: 0
-    },
-    card: {
-      borderWidth: 0,
-    },
     title: {
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
       fontWeight: 'bold',
-      fontSize: 15,
+      fontSize: 20,
+      lineHeight: 28,
+      flex: 0,
+      alignSelf: 'stretch',
+      flexGrow: 0,
       marginVertical: 1,
-      textAlign: 'center'
+      margin: 8,
     },
     text: {
-      lineHeight: 1.5,
-      fontSize: 12,
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
+      flex: 0,
+      flexGrow: 1,
+      fontSize: 14,
       marginVertical: 1,
       textAlign: 'center'
     },
     link: {
       color: '#1B95E0'
     },
-    code: {
-      fontFamily: 'monospace, monospace'
+    input: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: 0,
+      position: 'absolute',
+      width: 328,
+      height: 56,
+      left: 0
     },
-    scrollView: {
+    card: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      padding: 0,
+      position: 'relative',
       margin: 8,
+      backgroundColor: 'white',
+      borderRadius: 8
     },
+    cardHeader: {
+      flex: 0,
+      alignSelf: 'stretch',
+      flexGrow: 0,
+    },
+    cardContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      paddingVertical: 0,
+      paddingHorizontal: 16,
+      flex: 0,
+      alignSelf: 'stretch',
+      flexGrow: 0
+    },
+    cardActions: {
+      flex: 0,
+      alignSelf: 'stretch',
+      flexGrow: 0
+    },
+    cardActionButtons: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 0,
+      left: 8,
+      top: 8
+    }
 });

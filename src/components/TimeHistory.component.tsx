@@ -8,13 +8,13 @@ export default function TimeHistory() {
   const lstPonto: tPonto[] = getTimeRegisterHistory();
 
   return (
-    <SafeAreaView style={Styles.container}>
+    <SafeAreaView style={Styles.listItem}>
       <ScrollView style={Styles.scrollView}>
         {isNullOrUndefined(lstPonto) ? (
-          <Text>Sem registros!</Text>
+          <Text style={Styles.text}>Sem registros!</Text>
         ) : (
           lstPonto.map((e: tPonto) => (
-            <Text key={e.id}>
+            <Text key={e.id} style={Styles.text}>
               {e.tipo} - {e.dataHora.toString()}
             </Text>
           ))

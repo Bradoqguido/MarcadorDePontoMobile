@@ -10,7 +10,6 @@ export interface iLink {
 
 export interface iComponent {
     onPress: any;
-    bgColor: string; 
     title: string;
 }
 

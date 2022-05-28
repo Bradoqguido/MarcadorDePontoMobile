@@ -1,13 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, Text, View } from "react-native";
-import { Button, Card } from "react-native-paper";
+import { Button, Image, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Styles } from "../../Styles";
 import { NavigationContainer } from "@react-navigation/native";
 import DateTimePickerAndroid from "@react-native-community/datetimepicker";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { isNullOrUndefined, setConfig } from "../../Helpers/Utils";
-import ButtonComponent from "../../components/Button.component";
 import { tConfig } from "../../Interfaces/Types";
 
 export default function Configuracao() {
@@ -56,11 +54,11 @@ export default function Configuracao() {
         />
       </View>
 
-      <Card containerStyle={Styles.containerCard}>
-        <Card.Title style={Styles.title}>Configurações Marcar Ponto</Card.Title>
+      <View>
+        <Text style={Styles.title}>Configurações Marcar Ponto</Text>
 
-        <Card>
-          <Card.Title style={Styles.title}>Definir hora de entrada:</Card.Title>
+        <View>
+          <Text style={Styles.title}>Definir hora de entrada:</Text>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -84,13 +82,12 @@ export default function Configuracao() {
               showMode("time");
               setHorarioEntradaPadrao(date);
             }}
-            style={Styles.singleButtonCard}
             title="Definir"
           />
-        </Card>
+        </View>
 
-        <Card>
-          <Card.Title style={Styles.title}>Definir hora de saida:</Card.Title>
+        <View>
+          <Text style={Styles.title}>Definir hora de saida:</Text>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -113,15 +110,14 @@ export default function Configuracao() {
               showMode("time");
               setHorarioSaidaPadrao(date);
             }}
-            style={Styles.singleButtonCard}
             title="Definir"
           />
-        </Card>
+        </View>
 
-        <Card>
-          <Card.Title style={Styles.title}>
+        <View>
+          <Text style={Styles.title}>
             Definir hora de saida para o almoço:
-          </Card.Title>
+          </Text>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -145,15 +141,14 @@ export default function Configuracao() {
               showMode("time");
               setHorarioSaidaAlmoco(date);
             }}
-            style={Styles.singleButtonCard}
             title="Definir"
           />
-        </Card>
+        </View>
 
-        <Card>
-          <Card.Title style={Styles.title}>
+        <View>
+          <Text style={Styles.title}>
             Definir hora de volta do almoço:
-          </Card.Title>
+          </Text>
           <View style={Styles.container}>
             {show && (
               <DateTimePicker
@@ -172,21 +167,21 @@ export default function Configuracao() {
                 : `${dtaHorarioVoltaAlmoco.getHours()}:${dtaHorarioVoltaAlmoco.getMinutes()}:00`}
             </Text>
           </View>
+
           <Button
             onPress={() => {
               showMode("time")
               setHorarioVoltaAlmoco(date);
             }}
-            style={Styles.singleButtonCard}
             title="Definir"
           />
-        </Card>
+        </View>
 
-        <ButtonComponent
+        <Button
               onPress={SaveConfig}
               title="Salvar"
             />
-      </Card>
+      </View>
     </View>
   );
 }
