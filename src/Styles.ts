@@ -55,5 +55,4 @@ export const Styles = StyleSheet.create({
     scrollView: {
       margin: 8,
     },
-  });
-  
+});

@@ -8,7 +8,7 @@ export interface iLink {
     strLink: string;
 }
 
-export interface iButton {
+export interface iComponent {
     onPress: any;
     bgColor: string; 
     title: string;

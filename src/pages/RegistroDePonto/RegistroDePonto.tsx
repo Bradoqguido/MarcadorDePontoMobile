@@ -51,14 +51,24 @@ export default function RegistroDePonto ({ navigation }: any) {
         </ButtonComponent>
 
         <ButtonComponent
-          onPress={() => navigation.navigate("Configuracao")}>
-          Configurações
-        </ButtonComponent>
+          onPress={RegistrarPonto}
+          title="Registrar ponto"
+        />
       </View>
 
       <View>
-        <Text style={Styles.title}>Histórico</Text>
-        <TimeHistory />
+        <ButtonComponent
+          onPress={ () => navigation.navigate('Configuracao')}
+          title="Configurações"
+        />
+      </View>
+
+      <View style={Styles.text}>
+        <Text>Histórico</Text>
+
+        <View>
+          <TimeHistory />
+        </View>
       </View>
     </View>
   );
