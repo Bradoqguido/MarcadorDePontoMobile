@@ -30,3 +30,8 @@ export interface iAlert {
     txtAskMeLaterButton: string;
     onPressAskMeLaterButton: () => any;
 }
+
+export interface iDatePickerOnChange {
+    event: any;
+    selectedDate: Date;
+}
