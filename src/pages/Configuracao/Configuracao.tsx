@@ -26,9 +26,7 @@ export default function Configuracao() {
   const [dtaHorarioInicioAlmoco, setHorarioInicioAlmoco] = useState(new Date());
   const [dtaHorarioFimAlmoco, setHorarioFimAlmoco] = useState(new Date());
 
-  const onChange = (event: any, selectedDate: any) => {
-    console.log("onChange: " + event);
-    
+  const onChange = (event: any, selectedDate: any) => {    
     const currentDate: Date = (isNullOrUndefined(selectedDate) ? new Date() : selectedDate);
     currentDate.setSeconds(0);
     currentDate.setMilliseconds(0);
