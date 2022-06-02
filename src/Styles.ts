@@ -71,6 +71,7 @@ export const Styles = StyleSheet.create({
       left: 0
     },
     card: {
+      elevation: 5,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',

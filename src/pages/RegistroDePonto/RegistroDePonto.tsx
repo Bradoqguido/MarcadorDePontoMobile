@@ -54,7 +54,7 @@ export default function RegistroDePonto({ navigation }: any) {
       </View>
 
       <View style={Styles.cardContent}>
-        <View style={Styles.card} elevation={5}>
+        <View style={Styles.card}>
           <View style={Styles.cardHeader}>
             <Text style={Styles.title}>Marcar Ponto</Text>
             <RealTimeClockComponent />
@@ -81,7 +81,7 @@ export default function RegistroDePonto({ navigation }: any) {
       </View>
 
       <View style={Styles.cardContent}>
-        <View style={Styles.card} elevation={5}>
+        <View style={Styles.card}>
           <View style={Styles.containerHeader}>
             <View style={Styles.cardHeader}>
               <Text style={Styles.title}>Histórico</Text>
