@@ -94,6 +94,14 @@ export const Styles = StyleSheet.create({
       alignSelf: 'stretch',
       flexGrow: 0
     },
+    cardConstHeight300Content: {
+      display: 'flex',
+      flexDirection: 'column',
+      flex: 0,
+      alignSelf: 'stretch',
+      flexGrow: 0,
+      height: 300,
+    },
     cardActions: {
       display: 'flex',
       flexDirection: 'row',
