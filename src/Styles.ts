@@ -3,9 +3,13 @@ import { StatusBar, StyleSheet } from "react-native";
 export const Styles = StyleSheet.create({
     container: {
       paddingTop: StatusBar.currentHeight,
-      backgroundColor: '#000',
+      backgroundColor: '#fff',
+      display: 'flex',
+      flexGrow: 1
+    },     
+    containerHeader: {
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     },
     buttonContainer: {
       display: 'flex',
@@ -70,7 +74,7 @@ export const Styles = StyleSheet.create({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
-      padding: 0,
+      padding: 8,
       position: 'relative',
       margin: 8,
       backgroundColor: 'white',
@@ -84,7 +88,6 @@ export const Styles = StyleSheet.create({
     cardContent: {
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'flex-start',
       paddingVertical: 0,
       paddingHorizontal: 16,
       flex: 0,
@@ -92,8 +95,9 @@ export const Styles = StyleSheet.create({
       flexGrow: 0
     },
     cardActions: {
-      flex: 0,
-      alignSelf: 'stretch',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
       flexGrow: 0
     },
     cardActionButtons: {
@@ -101,7 +105,6 @@ export const Styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       padding: 0,
-      left: 8,
-      top: 8
+      margin: 8,
     }
 });

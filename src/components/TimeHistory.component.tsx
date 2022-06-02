@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, Text } from "react-native";
 import { Styles } from "../Styles";
 import { getTimeRegisterHistory, isNullOrUndefined } from "../Helpers/Utils";
 import { tPonto } from "../Interfaces/Types";
+import * as Localization from 'expo-localization';
 
 export default function TimeHistory() {
   const lstPonto: tPonto[] = getTimeRegisterHistory();
@@ -15,7 +16,7 @@ export default function TimeHistory() {
         ) : (
           lstPonto.map((e: tPonto) => (
             <Text key={e.id} style={Styles.text}>
-              {e.tipo} - {e.dataHora.toString()}
+              {e.tipo}: {e.dataHora.toLocaleDateString(Localization.locale)} as {e.dataHora.toLocaleTimeString(Localization.locale)}
             </Text>
           ))
         )}

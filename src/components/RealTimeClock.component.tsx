@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
+import * as Localization from 'expo-localization';
 
 const RealTimeClockComponent = () => {
   const [dtaClock, setDtaClock] = useState(new Date(Date.now()));
@@ -14,7 +15,7 @@ const RealTimeClockComponent = () => {
 
   return (
     <View>
-      <Text>{dtaClock.getUTCDate()}/{dtaClock.getUTCMonth()}/{dtaClock.getFullYear()} - {dtaClock.getHours()}:{dtaClock.getMinutes()}:{dtaClock.getSeconds()}</Text>
+      <Text>{dtaClock.toLocaleDateString(Localization.locale)} - {dtaClock.toLocaleTimeString(Localization.locale)}</Text>
     </View>
   );
 };
