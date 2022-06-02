@@ -18,4 +18,15 @@ export interface iConfig {
     dtaHorarioSaidaPadrao: Date;
     dtaHorarioSaidaAlmoco: Date;
     dtaHorarioVoltaAlmoco: Date;
-  };
+}
+
+export interface iAlert {
+    strTitle: string;
+    strMessage: string;
+    txtCancelButton: string;
+    onPressCancelButton: () => any;
+    txtOkButton: string;
+    onPressOkButton: () => any;
+    txtAskMeLaterButton: string;
+    onPressAskMeLaterButton: () => any;
+}
