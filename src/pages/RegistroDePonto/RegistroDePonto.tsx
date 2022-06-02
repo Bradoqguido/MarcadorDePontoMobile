@@ -62,9 +62,11 @@ export default function RegistroDePonto({ navigation }: any) {
 
           <View style={Styles.cardActions}>
             <View style={Styles.cardActionButtons}>
-              <Button
-                onPress={() => RegistrarPonto()}
-                title="Registrar ponto"/>
+              <FontAwesome.Button
+                name="plus"
+                onPress={() => RegistrarPonto()}>
+                Registrar ponto
+              </FontAwesome.Button>
             </View>
 
             <View style={Styles.cardActionButtons}>

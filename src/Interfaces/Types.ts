@@ -7,8 +7,8 @@ export type tPonto = {
 };
 
 export type tConfig = {
-  dtaHorarioEntradaPadrao: Date;
-  dtaHorarioSaidaPadrao: Date;
-  dtaHorarioSaidaAlmoco: Date;
-  dtaHorarioVoltaAlmoco: Date;
+  dtaHorarioInicioExpedinte: Date;
+  dtaHorarioFimExpediente: Date;
+  dtaHorarioInicioAlmoco: Date;
+  dtaHorarioFimAlmoco: Date;
 };
