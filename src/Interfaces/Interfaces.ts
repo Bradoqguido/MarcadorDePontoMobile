@@ -24,11 +24,11 @@ export interface iAlert {
     strTitle: string;
     strMessage: string;
     txtCancelButton: string;
-    onPressCancelButton: () => any;
+    onPressCancelButton: any;
     txtOkButton: string;
-    onPressOkButton: () => any;
+    onPressOkButton: any;
     txtAskMeLaterButton: string;
-    onPressAskMeLaterButton: () => any;
+    onPressAskMeLaterButton: any;
 }
 
 export interface iDatePickerOnChange {

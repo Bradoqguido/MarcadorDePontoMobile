@@ -5,7 +5,7 @@ import { Styles } from "../../Styles";
 import { NavigationContainer } from "@react-navigation/native";
 import DateTimePickerAndroid from "@react-native-community/datetimepicker";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { isNullOrUndefined, setConfig } from "../../Helpers/Utils";
+import { getConfig, isNullOrUndefined, setConfig } from '../../Helpers/Utils';
 import { tConfig } from "../../Interfaces/Types";
 import * as Localization from 'expo-localization';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -21,15 +21,21 @@ export default function Configuracao() {
   const [showDatePickerHorarioInicioAlmoco, setShowDatePickerHorarioInicioAlmoco] = useState(false);
   const [showDatePickerHorarioFimAlmoco, setShowDatePickerHorarioFimAlmoco] = useState(false);
 
-  const [dtaHorarioInicioExpedinte, setHorarioInicioExpediente] = useState(new Date());
-  const [dtaHorarioFimExpediente, setHorarioFimExpediente] = useState(new Date());
-  const [dtaHorarioInicioAlmoco, setHorarioInicioAlmoco] = useState(new Date());
-  const [dtaHorarioFimAlmoco, setHorarioFimAlmoco] = useState(new Date());
+  const [dtaHorarioInicioExpedinte, setHorarioInicioExpediente] = useState(isNullOrUndefined(getConfig().dtaHorarioInicioExpedinte) ? new Date() : getConfig().dtaHorarioInicioExpedinte);
+  const [dtaHorarioFimExpediente, setHorarioFimExpediente] = useState(isNullOrUndefined(getConfig().dtaHorarioFimExpediente) ? new Date() : getConfig().dtaHorarioFimExpediente);
+  const [dtaHorarioInicioAlmoco, setHorarioInicioAlmoco] = useState(isNullOrUndefined(getConfig().dtaHorarioInicioAlmoco) ? new Date() : getConfig().dtaHorarioInicioAlmoco);
+  const [dtaHorarioFimAlmoco, setHorarioFimAlmoco] = useState(isNullOrUndefined(getConfig().dtaHorarioFimAlmoco) ? new Date() : getConfig().dtaHorarioFimAlmoco);
 
   const onChange = (event: any, selectedDate: any) => {    
     const currentDate: Date = (isNullOrUndefined(selectedDate) ? new Date() : selectedDate);
     currentDate.setSeconds(0);
     currentDate.setMilliseconds(0);
+
+    console.log("Config editada:");
+    console.log("Inicio expedinte: " + showDatePickerHorarioInicioExpedinte);
+    console.log("Fim expedinte: " + showDatePickerHorarioFimExpediente);
+    console.log("Inicio almoco: " + showDatePickerHorarioInicioAlmoco);
+    console.log("Fim almoco: " + showDatePickerHorarioFimAlmoco);
 
     if (showDatePickerHorarioInicioExpedinte) {
       setHorarioInicioExpediente(isNullOrUndefined(currentDate) ? new Date() : currentDate);
@@ -51,10 +57,9 @@ export default function Configuracao() {
       setShowDatePickerHorarioFimAlmoco(false);
       return;
     }
-    
   };
 
-  function SaveConfig() {
+  function SaveConfig(): void {
     const config: tConfig = {
       dtaHorarioInicioExpedinte,
       dtaHorarioFimExpediente,
@@ -62,6 +67,7 @@ export default function Configuracao() {
       dtaHorarioFimAlmoco
     }
     setConfig(config);
+    console.log(getConfig());
   }
 
   return (
@@ -230,11 +236,11 @@ export default function Configuracao() {
               strTitle: "Informação",
               strMessage: "Registro Salvo com sucesso!",
               txtCancelButton: "",
-              onPressCancelButton: () => {},
+              onPressCancelButton: {},
               txtOkButton: "Confirmar",
-              onPressOkButton: () => SaveConfig,
+              onPressOkButton: SaveConfig(),
               txtAskMeLaterButton: "",
-              onPressAskMeLaterButton: () => {}
+              onPressAskMeLaterButton: {}
             }
             showConfirmAlert(alertOptions);
           }}>
