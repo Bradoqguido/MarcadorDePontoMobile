@@ -17,3 +17,7 @@ sudo expo install expo-sqlite
 
  - Use authentication to sign-in.
  search about expo google-sign-in
+
+
+# Figma Design
+[RegistroDePontoMobile(ReactNative)](https://www.figma.com/file/6dAqGprnv7YRKfJdKhy5qS/RegistroDePontoMobile(ReactNative)?node-id=0%3A1)
