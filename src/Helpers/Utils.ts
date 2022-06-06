@@ -38,9 +38,18 @@ export function setConfig(pConfig: tConfig): void {
 }
 
 /** Get the config of the time register.
- *
  * @returns The config.
  */
 export function getConfig(): tConfig {
+  // If config doesn`t exist, create a new one.
+  if (isNullOrUndefined(config)) {
+    const config: tConfig = {
+      dtaHorarioInicioExpedinte: new Date(),
+      dtaHorarioFimExpediente: new Date(),
+      dtaHorarioInicioAlmoco: new Date(),
+      dtaHorarioFimAlmoco: new Date(),
+    };
+    setConfig(config);
+  }
   return config;
 }
