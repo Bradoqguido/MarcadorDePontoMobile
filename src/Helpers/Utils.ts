@@ -1,6 +1,14 @@
 import { tPonto, tConfig } from "../Interfaces/Types";
 
-let historicoDePontos: tPonto[];
+let historicoDePontos: tPonto[] = [];
+
+export function addTimeRegister(pRegistrosDePonto: tPonto): void {
+  historicoDePontos.push(pRegistrosDePonto);
+}
+
+export function getLastIdFromTimeRegisterHistory(): number {
+  return Math.max(...historicoDePontos.map(e => e.id));
+}
 
 export function setTimeRegister(pRegistrosDePonto: tPonto[]): void {
   historicoDePontos = pRegistrosDePonto;
@@ -8,6 +16,12 @@ export function setTimeRegister(pRegistrosDePonto: tPonto[]): void {
 
 export function getTimeRegisterHistory(): tPonto[] {
   return historicoDePontos;
+}
+
+export function sortTimeRegistryHistory(): void {
+  historicoDePontos = historicoDePontos.sort(
+    (objA, objB) => objA.dataHora.getTime() - objB.dataHora.getTime(),
+  );
 }
 
 /** Verifiy if the data is null or undefined.
