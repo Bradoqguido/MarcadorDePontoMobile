@@ -1,0 +1,250 @@
+{
+  "config": {
+    "dtaHorarioFimAlmoco": "2022-06-05T16:30:00.000Z",
+    "dtaHorarioFimExpediente": "2022-06-05T21:00:00.000Z",
+    "dtaHorarioInicioAlmoco": "2022-06-05T15:00:00.000Z",
+    "dtaHorarioInicioExpedinte": "2022-06-05T10:42:00.000Z"
+  },
+  "lstPontos": [
+    {
+      "dataHora": "2022-05-02T10:42:00.000Z",
+      "id": 1,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-02T15:00:00.000Z",
+      "id": 2,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-02T16:30:00.000Z",
+      "id": 3,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-02T21:00:00.000Z",
+      "id": 4,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-03T10:42:00.000Z",
+      "id": 5,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-03T15:00:00.000Z",
+      "id": 6,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-03T16:30:00.000Z",
+      "id": 7,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-03T21:00:00.000Z",
+      "id": 8,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-04T10:42:00.000Z",
+      "id": 9,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-04T15:00:00.000Z",
+      "id": 10,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-04T16:30:00.000Z",
+      "id": 11,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-04T21:00:00.000Z",
+      "id": 12,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-05T10:42:00.000Z",
+      "id": 13,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-05T15:00:00.000Z",
+      "id": 14,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-05T16:30:00.000Z",
+      "id": 15,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-05T21:00:00.000Z",
+      "id": 16,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-06T10:42:00.000Z",
+      "id": 17,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-06T15:00:00.000Z",
+      "id": 18,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-06T16:30:00.000Z",
+      "id": 19,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-06T21:00:00.000Z",
+      "id": 20,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-09T10:42:00.000Z",
+      "id": 21,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-09T15:00:00.000Z",
+      "id": 22,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-05-09T16:30:00.000Z",
+      "id": 23,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-05-09T21:00:00.000Z",
+      "id": 24,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-06T10:42:00.000Z",
+      "id": 25,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-06T15:00:00.000Z",
+      "id": 26,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-06T16:30:00.000Z",
+      "id": 27,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-06T21:00:00.000Z",
+      "id": 28,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-07T10:32:00.000Z",
+      "id": 29,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-07T15:00:00.000Z",
+      "id": 30,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-07T16:30:00.000Z",
+      "id": 31,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-07T21:10:00.000Z",
+      "id": 32,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-08T11:00:00.000Z",
+      "id": 33,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-08T15:00:00.000Z",
+      "id": 34,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-08T16:30:00.000Z",
+      "id": 35,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-08T21:00:00.000Z",
+      "id": 36,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-09T10:42:00.000Z",
+      "id": 37,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-09T15:00:00.000Z",
+      "id": 38,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-09T16:30:00.000Z",
+      "id": 39,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-09T21:00:00.000Z",
+      "id": 40,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-10T10:42:00.000Z",
+      "id": 41,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-10T15:00:00.000Z",
+      "id": 42,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-10T16:30:00.000Z",
+      "id": 43,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-10T21:00:00.000Z",
+      "id": 44,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-13T10:42:00.000Z",
+      "id": 45,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-13T15:00:00.000Z",
+      "id": 46,
+      "tipo": "Saída"
+    },
+    {
+      "dataHora": "2022-06-13T16:30:00.000Z",
+      "id": 47,
+      "tipo": "Entrada"
+    },
+    {
+      "dataHora": "2022-06-13T21:00:00.000Z",
+      "id": 48,
+      "tipo": "Saída"
+    }
+  ]
+}
