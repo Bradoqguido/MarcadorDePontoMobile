@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import RegistroDePonto from './RegistroDePonto/RegistroDePonto';
 import Configuracao from "./Configuracao/Configuracao";
+import Relatorio from "./Relatorio/Relatorio";
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ function Routes() {
       <Stack.Navigator>
         <Stack.Screen name="RegistroDePonto" component={RegistroDePonto} />
         <Stack.Screen name="Configuracao" component={Configuracao} />
+        <Stack.Screen name="Relatorio" component={Relatorio} />
       </Stack.Navigator>
     </NavigationContainer>
   );

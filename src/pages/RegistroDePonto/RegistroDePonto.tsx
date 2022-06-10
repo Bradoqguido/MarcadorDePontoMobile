@@ -91,6 +91,10 @@ export default function RegistroDePonto({ navigation }: any) {
           <View style={Styles.containerHeader}>
             <View style={Styles.cardHeader}>
               <Text style={Styles.title}>Histórico</Text>
+              <Text style={Styles.textBold}>Legenda:</Text>
+              <Text style={Styles.textStatusAtrasado}>Atrasado</Text>
+              <Text style={Styles.textStatusAdiantado}>Adiantado</Text>
+              <Text style={Styles.textStatusHoraExtra}>Hora extra</Text>
             </View>
           </View>
 

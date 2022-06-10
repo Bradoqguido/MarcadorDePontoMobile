@@ -4,6 +4,10 @@ export interface iPontoModalProps {
     lstPonto: tPonto[];
 };
 
+export interface iPonto {
+    pPonto: tPonto;
+};
+
 export interface iLink {
     strLink: string;
 }
@@ -34,4 +38,8 @@ export interface iAlert {
 export interface iDatePickerOnChange {
     event: any;
     selectedDate: Date;
+}
+
+export interface iReport {
+    blnGerarRelatorio: boolean;
 }

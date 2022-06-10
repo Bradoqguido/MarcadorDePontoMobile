@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet } from "react-native";
+import { StatusBar, Dimensions, StyleSheet } from "react-native";
 
 export const Styles = StyleSheet.create({
     container: {
@@ -22,7 +22,12 @@ export const Styles = StyleSheet.create({
       marginHorizontal: 'auto',
       maxWidth: 500
     },
-    listItem: {
+    column: {
+      display: "flex",
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    row: {
       display: "flex",
       flexDirection: 'row',
       alignItems: 'center',
@@ -42,20 +47,49 @@ export const Styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 20,
       lineHeight: 28,
-      flex: 0,
-      alignSelf: 'stretch',
-      flexGrow: 0,
       marginVertical: 1,
-      margin: 8,
+    },
+    subTitle: {
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: 16,
+      lineHeight: 20,
+      marginVertical: 1,
+    },
+    textBold: {
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: 'bold'
     },
     text: {
       fontFamily: 'Roboto',
       fontStyle: 'normal',
-      flex: 0,
-      flexGrow: 1,
       fontSize: 14,
-      marginVertical: 1,
-      textAlign: 'center'
+    },
+    textStatusAtrasado: {
+      fontFamily: 'Roboto',
+      fontWeight: 'bold',
+      fontSize: 14,
+      color: 'red'
+    },
+    textStatusAdiantado: {
+      fontFamily: 'Roboto',
+      fontWeight: 'bold',
+      fontSize: 14,
+      color: 'darkblue'
+    },
+    textStatusHoraExtra: {
+      fontFamily: 'Roboto',
+      fontWeight: 'bold',
+      fontSize: 14,
+      color: 'blue'
+    },
+    textStatusRegistroInesperado: {
+      fontFamily: 'Roboto',
+      fontWeight: 'bold',
+      fontSize: 14,
+      color: 'purple'
     },
     link: {
       color: '#1B95E0'
@@ -91,23 +125,25 @@ export const Styles = StyleSheet.create({
       flexDirection: 'column',
       paddingVertical: 0,
       paddingHorizontal: 16,
-      flex: 0,
       alignSelf: 'stretch',
-      flexGrow: 0
     },
-    cardConstHeight300Content: {
+    cardConstHeight30PercentContent: {
       display: 'flex',
       flexDirection: 'column',
-      flex: 0,
-      alignSelf: 'stretch',
-      flexGrow: 0,
-      height: 300,
+      padding: 8,
+      height: (Dimensions.get('window').height - (Dimensions.get('window').height*(70/100))),
+    },
+    cardConstHeight40PercentContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      padding: 8,
+      height: (Dimensions.get('window').height - (Dimensions.get('window').height*(40/100)))
     },
     cardActions: {
       display: 'flex',
       flexDirection: 'row',
+      flexWrap: 'wrap',
       alignItems: 'flex-start',
-      flexGrow: 0
     },
     cardActionButtons: {
       display: 'flex',
