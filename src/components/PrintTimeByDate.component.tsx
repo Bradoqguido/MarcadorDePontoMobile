@@ -22,7 +22,7 @@ export default function PrintTimeByDate({ pJoinPonto }: iPontoJoin) {
         <View style={Styles.cardContent}>
           {pJoinPonto.lstPonto.map(
             (e: tPonto) =>
-              e.dataHora.getUTCMonth() === new Date().getUTCMonth() && (
+              (
                 <Text key={e.id} style={setHighlightStyleToDate(e)}>
                   {e.tipo}: {e.dataHora.toLocaleTimeString(Localization.locale)}
                 </Text>
