@@ -7,7 +7,8 @@ export function addTimeRegister(pRegistrosDePonto: tPonto): void {
 }
 
 export function getLastIdFromTimeRegisterHistory(): number {
-  return Math.max(...historicoDePontos.map(e => e.id));
+  const numIds = historicoDePontos.map(e => e.id);
+  return Math.max(...numIds);
 }
 
 export function setTimeRegister(pRegistrosDePonto: tPonto[]): void {
