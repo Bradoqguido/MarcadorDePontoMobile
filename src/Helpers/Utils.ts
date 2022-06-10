@@ -1,4 +1,4 @@
-import { tPonto, tConfig } from "../Interfaces/Types";
+import { tPonto, tConfig, tPontoJoin } from "../Interfaces/Types";
 import * as Localization from 'expo-localization';
 import { Styles } from "../Styles";
 
@@ -72,6 +72,15 @@ export function getConfig(): tConfig {
 }
 
 export function setHighlightStyleToDate(pPonto: tPonto) {
+  /*
+  new date() < inicioExpediente: Adiantado
+  new date() > inicioExpediente && new date() < inicioAlmoco: Registro inexperado
+  if new date() < fimAlmoco: Adiantado
+    else if (new date() - fimAlmoco) < 1hora: Menos de 1h de almoço
+  new date() > fimAlmoco && new date() < fimExpediente: Registro inexperado
+  new date() > fimExpediente: Hora extra
+  */
+
   let style: any = Styles.text;
   // Marca pontos antes do horário de inicio do expediente.
   if (
@@ -98,7 +107,7 @@ export function setHighlightStyleToDate(pPonto: tPonto) {
     pPonto.dataHora.toLocaleTimeString(Localization.locale) <
       getConfig().dtaHorarioFimAlmoco.toLocaleTimeString(Localization.locale)
   ) {
-    style = Styles.textStatusAdiantado;
+    style = Styles.textStatusHoraExtra;
   }
 
   // Marca registros durante o periodo entre o fim do almoço e o fim do expediente.
@@ -120,4 +129,26 @@ export function setHighlightStyleToDate(pPonto: tPonto) {
   }
 
   return style;
+}
+
+export function joinPontoByDate(pLstPonto: tPonto[]) {
+  let lstJoinedTimeByDate: tPontoJoin[] = [];
+  for (let i = 0; i < pLstPonto.length; i++) {
+    const objIPonto: tPonto = pLstPonto[i];
+
+    const tmpJoinedDate = lstJoinedTimeByDate.find(e => e.date.toLocaleDateString(Localization.locale) === objIPonto.dataHora.toLocaleDateString(Localization.locale));
+    const indexOfJoinedDate = lstJoinedTimeByDate.findIndex(e => e.date.toLocaleDateString(Localization.locale) === objIPonto.dataHora.toLocaleDateString(Localization.locale));
+    if (isNullOrUndefined(tmpJoinedDate)) {
+      let lstPontoAux: tPonto[] = [];
+      lstPontoAux.push(objIPonto);
+      lstJoinedTimeByDate.push({
+        date: objIPonto.dataHora,
+        lstPonto: lstPontoAux
+      });
+    } else {
+      lstJoinedTimeByDate[indexOfJoinedDate].lstPonto.push(objIPonto);
+    }    
+  }
+
+  return lstJoinedTimeByDate;
 }

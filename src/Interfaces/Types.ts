@@ -12,3 +12,9 @@ export type tConfig = {
   dtaHorarioInicioAlmoco: Date;
   dtaHorarioFimAlmoco: Date;
 };
+
+
+export type tPontoJoin = {
+  date: Date;
+  lstPonto: tPonto[];
+}

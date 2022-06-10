@@ -73,12 +73,6 @@ export const Styles = StyleSheet.create({
       fontSize: 14,
       color: 'red'
     },
-    textStatusAdiantado: {
-      fontFamily: 'Roboto',
-      fontWeight: 'bold',
-      fontSize: 14,
-      color: 'darkblue'
-    },
     textStatusHoraExtra: {
       fontFamily: 'Roboto',
       fontWeight: 'bold',

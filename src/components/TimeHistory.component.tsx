@@ -2,17 +2,18 @@ import React from "react";
 import { SafeAreaView, ScrollView, Text } from "react-native";
 import { Styles } from "../Styles";
 import {
-  getConfig,
   getTimeRegisterHistory,
   isNullOrUndefined,
-  setHighlightStyleToDate
+  joinPontoByDate
 } from "../Helpers/Utils";
-import { tPonto } from "../Interfaces/Types";
+import { tPonto, tPontoJoin } from "../Interfaces/Types";
 import * as Localization from "expo-localization";
 import { iReport } from "../Interfaces/Interfaces";
+import PrintTimeByDate from "./PrintTimeByDate.component";
 
 export default function TimeHistory({ blnGerarRelatorio }: iReport) {
   const lstPonto: tPonto[] = getTimeRegisterHistory();
+  const lstJoinedTimeByDate: tPontoJoin[] = joinPontoByDate(lstPonto);
 
   return blnGerarRelatorio ? (
     <SafeAreaView style={Styles.cardConstHeight40PercentContent}>
@@ -20,11 +21,8 @@ export default function TimeHistory({ blnGerarRelatorio }: iReport) {
         {isNullOrUndefined(lstPonto) ? (
           <Text style={Styles.text}>Sem registros!</Text>
         ) : (
-          lstPonto.map((e: tPonto) => (
-            <Text key={e.id} style={setHighlightStyleToDate(e)}>
-              {e.tipo}: {e.dataHora.toLocaleDateString(Localization.locale)} as{" "}
-              {e.dataHora.toLocaleTimeString(Localization.locale)}
-            </Text>
+          lstJoinedTimeByDate.map((e: tPontoJoin) => (
+            <PrintTimeByDate pJoinPonto={e}/>
           ))
         )}
       </ScrollView>
@@ -35,15 +33,10 @@ export default function TimeHistory({ blnGerarRelatorio }: iReport) {
         {isNullOrUndefined(lstPonto) ? (
           <Text style={Styles.text}>Sem registros!</Text>
         ) : (
-          lstPonto.map(
-            (e: tPonto) =>
-              e.dataHora.getUTCMonth() === new Date().getUTCMonth() && (
-                <Text key={e.id} style={setHighlightStyleToDate(e)}>
-                  {e.tipo}: {e.dataHora.toLocaleDateString(Localization.locale)}{" "}
-                  as {e.dataHora.toLocaleTimeString(Localization.locale)}
-                </Text>
-              )
-          )
+          lstJoinedTimeByDate.map((e: tPontoJoin) => (
+            e.date.getUTCMonth() === new Date().getUTCMonth() &&
+            <PrintTimeByDate pJoinPonto={e}/>
+          ))
         )}
       </ScrollView>
     </SafeAreaView>

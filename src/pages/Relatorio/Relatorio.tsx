@@ -14,7 +14,6 @@ export default function Relatorio() {
               <Text style={Styles.title}>Relatório</Text>
               <Text style={Styles.textBold}>Legenda:</Text>
               <Text style={Styles.textStatusAtrasado}>Atrasado</Text>
-              <Text style={Styles.textStatusAdiantado}>Adiantado</Text>
               <Text style={Styles.textStatusHoraExtra}>Hora extra</Text>
             </View>
           </View>
@@ -27,12 +26,3 @@ export default function Relatorio() {
     </View>
   );
 }
-
-/*
-new date() < inicioExpediente: Adiantado
-new date() > inicioExpediente && new date() < inicioAlmoco: Registro inexperado
-if new date() < fimAlmoco: Adiantado
-	else if (new date() - fimAlmoco) < 1hora: Menos de 1h de almoço
-new date() > fimAlmoco && new date() < fimExpediente: Registro inexperado
-new date() > fimExpediente: Hora extra
-*/

@@ -1,6 +1,6 @@
-import { tPonto } from './Types';
+import { tPonto, tPontoJoin } from './Types';
 
-export interface iPontoModalProps {
+export interface iPontoList {
     lstPonto: tPonto[];
 };
 
@@ -43,3 +43,7 @@ export interface iDatePickerOnChange {
 export interface iReport {
     blnGerarRelatorio: boolean;
 }
+
+export interface iPontoJoin {
+    pJoinPonto: tPontoJoin;
+  }
