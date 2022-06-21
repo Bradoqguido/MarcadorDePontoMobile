@@ -21,3 +21,5 @@ sudo expo install expo-sqlite
 
 # Figma Design
 [RegistroDePontoMobile(ReactNative)](https://www.figma.com/file/6dAqGprnv7YRKfJdKhy5qS/RegistroDePontoMobile(ReactNative)?node-id=0%3A1)
+
+[Javascript Clock](https://youtu.be/weZFfrjF-k4)
