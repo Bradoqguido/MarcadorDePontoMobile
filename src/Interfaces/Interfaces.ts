@@ -4,6 +4,12 @@ export interface iPontoList {
     lstPonto: tPonto[];
 };
 
+export interface iClock {
+    hourRatio: number;
+    minuteRatio: number;
+    secondRatio: number;
+}
+
 export interface iPonto {
     pPonto: tPonto;
 };

@@ -39,12 +39,9 @@ export default function RegistroDePonto({ navigation }: any) {
       <View style={Styles.containerHeader}>
         <StatusBar style="auto" />
         <View style={Styles.cardHeader}>
-          <Image
-            accessibilityLabel="React logo"
-            source={{ uri: logoUri }}
-            resizeMode="contain"
-            style={Styles.logo}
-          />
+          <View style={Styles.row}>
+            <RealTimeClockComponent />
+          </View>
         </View>
       </View>
 
@@ -52,7 +49,6 @@ export default function RegistroDePonto({ navigation }: any) {
         <View style={Styles.card}>
           <View style={Styles.cardHeader}>
             <Text style={Styles.title}>Marcar Ponto</Text>
-            <RealTimeClockComponent />
           </View>
 
           <View style={Styles.cardActions}>
